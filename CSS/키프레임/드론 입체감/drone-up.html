@@ -1,0 +1,37 @@
+<style>
+/* 리셋CSS */
+* {margin:0;padding:0;}
+
+/* 공통스타일 */
+[class*="drone"] img {width:100%;}
+[class*="drone"] [class*="fan"] {position:absolute;z-index:1;width:50%;}
+
+/* 레이아웃 */
+.drone-up {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:200px;width:100%;}
+.drone-up .fan01 {top:4.5%;left:-18.5%;}
+.drone-up .fan02 {top:4.5%;left:68.7%;}
+.drone-up .fan03 {top:87%;left:-18.5%;}
+.drone-up .fan04 {top:87%;left:68.8%;}
+
+/* 애니메이션 */
+.rotate {animation:rotate .04s infinite linear;}
+.trans-scale {animation:trans-scale 1s infinite linear alternate;}
+
+/* 키프레임 */
+@keyframes rotate {
+	0% {transform:rotate(0);}
+	100% {transform:rotate(360deg);}
+}
+@keyframes trans-scale {
+	0% {transform:translate(-50%,-50%) scale(1);}
+	100% {transform:translate(-50%,-50%) scale(1.02);}
+}
+</style>
+
+<div class="drone-up trans-scale">
+	<div class="fan01"><img src="./img/fan-up.png" class="rotate"></div>
+	<div class="fan02"><img src="./img/fan-up.png" class="rotate"></div>
+	<div class="fan03"><img src="./img/fan-up.png" class="rotate"></div>
+	<div class="fan04"><img src="./img/fan-up.png" class="rotate"></div>
+	<img src="./img/body-up.png">
+</div>

@@ -1,0 +1,13 @@
+/*
+h1 {
+  transition: all 2s;
+}
+
+h1 {
+  transition-property: all; /*값 위드 값을 변화면 윗 오퍼시트값이면 오퍼시트 둘 다면 all ->오퍼시트 투명하게*/
+/* transition-duration: 0s; 애니메이션 작동 시간 s ms */
+/* transition-delay: 0s; 딜레이 시간 다른 트렌지션이 먼저 실행되게 할수 있음 */
+/* transition-timing-function: ease; 천천히 시작해서 빨리 끝남 등등 */
+/* transition: width 0.35s ease 0.1s; 속성 시간 변화 지연 */
+/* transition: all 0.35s; 속성 시간 */
+/* } */

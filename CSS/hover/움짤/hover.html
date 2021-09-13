@@ -1,0 +1,47 @@
+<style>
+.box,
+.list {
+	max-width:1200px;
+	margin:0 auto;
+	font-size:0;
+}
+.list > li {
+	display:inline-block;
+	vertical-align:top;
+	width:33.3%;
+}
+.list > li > div {
+	width:auto;
+	padding:15px;
+}
+.list > li .screen {
+	display:block;
+	width:auto;
+	position:relative;
+}
+.list > li .screen img {width:100%;}
+.list > li .screen .on {
+	position:absolute;
+	top:0;left:0;
+	opacity:0;
+	transition:all .5s;
+}
+.list > li:hover .screen .on {opacity:1;}
+.list > li h3 {font-size:16px;color:#000;font-weight:900;}
+.list > li p {font-size:12px;color:#999;font-weight:500}
+</style>
+
+<div class="box">
+	<ul class="list">
+		<li>
+			<div>
+				<a class="screen" href="#" target="_blank">
+					<img src="./img/list01_off.jpg">
+					<img class="on" src="./img/list01_on.gif">
+				</a>
+				<h3>3단 관절형 애니메이션</h3>
+				<p>KEYFRAMES를 이용해서 달리는 모션 만들기</p>
+			</div>
+		</li>
+	</ul>
+</div>

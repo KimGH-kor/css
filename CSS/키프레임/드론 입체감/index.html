@@ -1,0 +1,86 @@
+<style>
+/* 리셋CSS */
+* {margin:0;padding:0;box-sizing:border-box;}
+
+/* 공통스타일 */
+.dronelist {font-size:0;max-width:1000px;width:100%;margin:0 auto;}
+.dronelist > li {display:inline-block;vertical-align:middle;width:33.3%;background:#f2f2f2;}
+.dronelist > li > div {position:relative;padding-bottom:100%;}
+[class*="drone"] img {width:100%;}
+[class*="drone"] [class*="fan"] {position:absolute;z-index:1;width:50%;}
+[class*="drone"] [class*="fan"] img {}
+
+/* 레이아웃 */
+.drone-diagonal {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:150px;width:100%;}
+.drone-diagonal .fan01 {top:22%;left:4.9%;width:38%;transform:translate(-50%,-50%) perspective(500px) rotateX(60deg);}
+.drone-diagonal .fan02 {top:56%;left:55.7%;width:50%;transform:translate(-50%,-50%) perspective(500px) rotateX(60deg);}
+.drone-diagonal .fan03 {top:1.6%;left:47%;width:30%;transform:translate(-50%,-50%) perspective(500px) rotateX(60deg);}
+.drone-diagonal .fan04 {top:23%;left:95%;width:36%;transform:translate(-50%,-50%) perspective(500px) rotateX(60deg);}
+
+.drone-up {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:100px;width:100%;}
+.drone-up .fan01 {top:4.5%;left:-18.5%;}
+.drone-up .fan02 {top:4.5%;left:69%;}
+.drone-up .fan03 {top:87%;left:-18.5%;}
+.drone-up .fan04 {top:87%;left:69%;}
+
+.drone-side {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:100px;width:100%;}
+.drone-side .fan01 {top:9%;left:-23.5%;width:60%;}
+.drone-side .fan02 {top:9%;left:64%;width:60%;}
+
+/* 애니메이션 */
+.rotate {animation:rotate .04s infinite linear;}
+.rotate-side {animation:rotate-side .16s infinite linear;}
+.upndown {animation:upndown 2s infinite linear alternate;}
+.trans-scale {animation:trans-scale 2s infinite linear alternate;}
+
+/* 키프레임 */
+@keyframes rotate {
+	0% {transform:rotate(0);}
+	100% {transform:rotate(360deg);}
+}
+@keyframes rotate-side {
+	0% {transform: rotateY(0deg);}
+	100% {transform: rotateY(360deg);}
+}
+@keyframes upndown {
+	0% {margin-top:0;}
+	100% {margin-top:-10px;}
+}
+@keyframes trans-scale {
+	0% {transform:translate(-50%,-50%) scale(1);}
+	100% {transform:translate(-50%,-50%) scale(1.05);}
+}
+</style>
+<ul class="dronelist">
+	<li>
+		<div>
+			<div class="drone-diagonal upndown">
+				<div class="fan01"><img src="./img/fan.png" class="rotate"></div>
+				<div class="fan02"><img src="./img/fan.png" class="rotate"></div>
+				<div class="fan03"><img src="./img/fan.png" class="rotate"></div>
+				<div class="fan04"><img src="./img/fan.png" class="rotate"></div>
+				<img src="./img/body.png">
+			</div>
+		</div>
+	</li>
+	<li>
+		<div>
+			<div class="drone-up trans-scale">
+				<div class="fan01"><img src="./img/fan-up.png" class="rotate"></div>
+				<div class="fan02"><img src="./img/fan-up.png" class="rotate"></div>
+				<div class="fan03"><img src="./img/fan-up.png" class="rotate"></div>
+				<div class="fan04"><img src="./img/fan-up.png" class="rotate"></div>
+				<img src="./img/body-up.png">
+			</div>
+		</div>
+	</li>
+	<li>
+		<div>
+			<div class="drone-side upndown">
+				<div class="fan01"><img src="./img/fan-side.png" class="rotate-side"></div>
+				<div class="fan02"><img src="./img/fan-side.png" class="rotate-side"></div>
+				<img src="./img/body-side.png">
+			</div>
+		</div>
+	</li>
+</ul>

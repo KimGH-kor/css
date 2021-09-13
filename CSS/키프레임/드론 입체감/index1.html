@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drone</title>
+</head>
+<body>
+    <div class="drone">
+        <div class="fan01"><img src="img/fan.png" class="turn"></div>
+        <div class="fan02"><img src="img/fan.png" class="turn"></div>
+        <div class="fan03"><img src="img/fan.png" class="turn"></div>
+        <div class="fan04"><img src="img/fan.png" class="turn"></div>
+        <img src="img/body.png">
+    </div>
+</body>
+</html>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .drone img{
+        width: 100%;
+    }
+    .drone div{
+        position: absolute;
+        z-index: 1;
+        transform: translate(-50%, -50%) perspective(500px) rotateX(60deg)
+    }
+    .drone{
+        /* position값 렐러티브가 상위 노드에 없을 경우 최상위 노드 기준으로 맞춰짐 */
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-width: 450px;
+        width: 100%;
+    }
+    .drone .fan01{
+        top: 22%;
+        left: 4.9%;
+        width: 38%;
+    }
+    .drone .fan02{
+        top: 56%;
+        left: 55.7%;
+        width: 50%;
+    }
+    .drone .fan03{
+        top: 1.6%;
+        left: 47%;
+        width: 30%;
+    }
+    .drone .fan04{
+        top: 23%;
+        left: 95%;
+        width: 36%;
+    }
+
+    .turn{animation:turn 0.04s infinite linear;}
+    
+    @keyframes turn {
+        0%{transform: rotate(0);}
+        100%{transform: rotate(360deg);}
+    }
+
+    .drone{animation: bounce 1s infinite linear alternate;}
+/*                                               0에서 100% 앞뒤로 재생 */
+    @keyframes bounce{
+        0%{margin-top:0;}
+        100%{margin-top: -10px;}
+    }
+
+
+</style>

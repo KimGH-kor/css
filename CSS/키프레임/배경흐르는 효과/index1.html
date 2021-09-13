@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="moving"></div>
+</body>
+</html>
+
+<style>
+    .moving{
+        background:url("./img/bikebg.png") 0 center/1500px repeat-x;
+                        /*이미지 위치/포지션 x좌표 y좌표 중앙/사이즈 500/x축에서만 반복되는 리펙트 */
+        width: 1500px;   /*                                            repeat-x: 수평으로 반복*/
+        height: 500px;
+        animation: movebg 6s linear infinite;
+        /*         movebg의 키프레임 실행/ 시작부터 끝까지 6초/ 변환효과는 일정하게/ 무한반복  */
+    }
+    @keyframes movebg{
+        0%{background-position: 0 center;}
+        /* 0%위치/              기본위치가 0 */
+        100%{background-position: -1500px center;}
+        /* 0%위치/             마지막부분에 처음이랑 연결 되도록 크기값 */
+    }
+    
+</style>
+<!--
+    처음 시작 부분과 끝부분을 연결 시켜주어야한다.
+    1.배경 이미지 만들기
+    2.배경 속성 적용하기
+    3. background-position을
+       키프레임과 애니메이션으로 만들기
+
+    @keyframes/animaation 배경이 흐르도록 할때 쓰는것
+
+
+    -->
